@@ -1,0 +1,159 @@
+body {
+  background-color: #f2e6ff;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  margin: 50px auto;
+  width: 80%;
+}
+
+h1 {
+  font-size: 40px;
+  color: #6a1b9a;
+  animation: fadeIn 1s ease-in;
+  /* Animation for header */
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in;
+  /* Animation for paragraph */
+}
+
+.gifts {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.gift {
+  min-width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;animation: rotate 2s infinite ease-in-out;
+  /* Animation for gifts */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.gift:before {
+  content: '';
+  width: 90px;
+  height: 100px;
+  background-color: #ffc107;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gift img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #ff69b4;
+    text-shadow: 2px 2px 8px #fff176, 0 0 10px #ff69b4;
+    animation: birthday-pop 1s ease-in-out infinite alternate;
+    letter-spacing: 3px;
+    margin: 20px 0;
+}
+
+@keyframes birthday-pop {
+    0% {
+        transform: scale(1) rotate(-2deg);
+        color: #e05bda;
+        text-shadow: 2px 2px 8px #b671df, 0 0 10px #8935d8;
+    }
+    50% {
+        transform: scale(1.1) rotate(2deg);
+        color: #845391;
+        text-shadow: 2px 2px 16px #b671df, 0 0 20px #8935d8;
+    }
+    100% {
+        transform: scale(1) rotate(-2deg);
+        color: #cd64db;
+        text-shadow: 2px 2px 8px #b671df, 0 0 10px #8935d8;
+    }
+}
+
+/* ...existing code... */
+
+.gifts-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  position: relative;
+  margin-left: 20px;
+}
+
+.carousel-btn {
+  background: #fff;
+  border: 2px solid #ba68c8;
+  color: #ba68c8;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin: 0 20px;
+}
+
+.carousel-btn:hover {
+  background: #ba68c8;
+  color: #fff;
+}
+
+.gifts-window {
+  overflow: hidden;
+  padding-left: 80px;
+  width: 400px; /* 4 gifts * 80px + 3*10px margin */
+}
+
+.gifts {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 30px; /* Add this line for 30px gap between gifts */
+}
+
+.cake {
+  width: 200px;
+  display: block;
+  margin: 0 auto 20px auto;
+  transform: scale(1.2); /* Final big size */
+  animation: cake-grow 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes cake-grow {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
