@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mamu's Birthday</title>
+  <link rel="stylesheet" href="birthday.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>🎉✨ Happy Birthday to the Coolest Mamu Ever! ✨🎉</h1>
+
+  <div class="container">
+    <div class="scroll-wrapper" onclick="unrollScroll()">
+      <div class="scroll-paper" id="scrollPaper">
+        <p>
+          Not all heroes wear capes — some give the best advice, spread kindness like confetti, and light up every room
+          with
+          their presence… That’s YOU, Mamu! 💫
+
+          <br>Your intelligence? 💡 Next level.
+          <br>Your heart? ❤️ Pure gold.
+          <br>Your support? 🙌 Always on point.
+          <br>Your vibes? 🔥 Unmatched.
+
+          <br>Thank you for being my guide, my biggest cheerleader, and my forever go-to person. May your day be as
+          amazing as
+          you are, and this year bring nothing but epic moments, laughter, and success!
+
+          <br>Stay legendary, Mamu! 💥🎂🎈
+        </p>
+      </div>
+    </div>
+
+    <img src="birthday-cake.png" alt="Birthday Cake" class="cake" />
+    <div class="gifts-carousel">
+      <button class="carousel-btn left">&#8592;</button>
+      <div class="gifts-window">
+        <div class="gifts">
+          <script src="quotes.js"></script>
+          <script>
+            const giftsContainer = document.querySelector('.gifts');
+            for (let i = 1; i < 49; i++) {
+              const div = document.createElement('div');
+              div.className = 'gift';
+              const flipCard = document.createElement('div');
+              flipCard.className = 'flip-card';
+              const flipInner = document.createElement('div');
+              flipInner.className = 'flip-card-inner';
+
+              const front = document.createElement('div');
+              front.className = 'flip-card-front';
+              const img = document.createElement('img');
+              img.src = `pics/pic${i}.jpg`;
+              img.alt = `Gift ${i}`;
+              front.appendChild(img);
+
+              const back = document.createElement('div');
+              back.className = 'flip-card-back';
+              back.innerHTML = `<p>${quotes[(i - 1) % quotes.length]}</p>`;
+
+              flipInner.appendChild(front);
+              flipInner.appendChild(back);
+              flipCard.appendChild(flipInner);
+              div.appendChild(flipCard);
+              giftsContainer.appendChild(div);
+            }
+          </script>
+          <!-- <script>
+            const giftsContainer = document.querySelector('.gifts');
+            for (let i = 1; i < 49; i++) {
+              const div = document.createElement('div');
+              div.className = 'gift';
+              const img = document.createElement('img');
+              img.src = `pics/pic${i}.jpg`;
+              img.alt = `Gift ${i}`;
+              div.appendChild(img);
+              giftsContainer.appendChild(div);
+            }
+          </script> -->
+          <div class="gift"><video src="pics/video1.mp4" controls></video></div>
+          <div class="gift"><video src="pics/video2.mp4" controls></video></div>
+        </div>
+      </div>
+      <button class="carousel-btn right">&#8594;</button>
+    </div>
+  </div>
+  <audio autoplay loop>
+    <source src="happy-birthday-357371.mp3" type="audio/mpeg">
+  </audio>
+  <button class="birthday-audio-btn" onclick="document.querySelector('audio').play()">🔊 Play Birthday Song</button>
+
+  <script src="birthday.js"></script>
+
+  <script>
+    // Flip card on click
+    document.addEventListener('click', function (e) {
+      const card = e.target.closest('.flip-card');
+      if (card) {
+        card.classList.toggle('flipped');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
